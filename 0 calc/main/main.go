@@ -14,7 +14,6 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-	data.PrintCalculator()
 
 	for {
 		text, err := reader.ReadString('\n')

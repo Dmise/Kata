@@ -2,17 +2,41 @@ package data
 
 import "fmt"
 
-var RomanDigits = [5]string{"X", "IX", "V", "IV", "I"}
-
 func ArabicToRoman(num int) string {
 
-	keyValues := []int{10, 9, 5, 4, 1}
+	romanDigits := []string{
+		"C",
+		"XC",
+		"L",
+		"XL",
+		"XXX",
+		"XX",
+		"X",
+		"IX",
+		"V",
+		"IV",
+		"I",
+	}
+
+	keyValues := []int{
+		100,
+		90,
+		50,
+		40,
+		30,
+		20,
+		10,
+		9,
+		5,
+		4,
+		1,
+	}
 
 	romanResult := ""
-	for i := 0; i < len(RomanDigits); i++ {
+	for i := 0; i < len(romanDigits); i++ {
 		for num >= keyValues[i] {
 			num -= keyValues[i]
-			romanResult += RomanDigits[i]
+			romanResult += romanDigits[i]
 		}
 	}
 	return romanResult
